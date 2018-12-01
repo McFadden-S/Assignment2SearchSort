@@ -27,7 +27,8 @@
  	// ********** accessors **********
  	
         /*****************************************************
-        // Purpose: sorts the list in ascending order
+        // Purpose: sorts the list in ascending order through bubble
+        //          sort method
         // Interface: IN: array --> list
         //                int --> length
         // Returns: None??
@@ -51,7 +52,8 @@
         }//end of bubbleSort
         
         /*****************************************************
-        // Purpose: sorts the list in ascending order
+        // Purpose: sorts the list in ascending order through selection
+        //          method
         // Interface: IN: array --> list
         //                int --> length
         // Returns: None??
@@ -75,8 +77,10 @@
                 list[ind] = y;
                 list[length] = x;        
             }//end of while
-        }//end of bubbleSort
-     
+        }//end of selectionSort
+        
+        
+        
  	// ********** mutators **********
  
  }  // end class
