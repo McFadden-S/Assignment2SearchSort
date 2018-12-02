@@ -26,6 +26,10 @@
  	
  	// ********** accessors **********
  	
+        //public void testPrint(int[]l)
+     
+        // ********** mutators **********
+        
         /*****************************************************
         // Purpose: sorts the list in ascending order through bubble
         //          sort method
@@ -38,7 +42,7 @@
             int y = 0; //variable for data swap
             
             while(length>1){
-                for(int i = 0; i < length; i++){
+                for(int i = 0; i < length-1; i++){
                     if(list[i]>list[i+1]){
                         x = list[i];
                         y = list[i+1];
@@ -69,18 +73,68 @@
                         ind = i;
                     }//end of if
                 }//end of for
-                length--;
                 
                 x = list[ind];
                 y = list[length];
 
                 list[ind] = y;
-                list[length] = x;        
+                list[length] = x; 
+                
+                length--;
+                
             }//end of while
         }//end of selectionSort
         
         
+        /*****************************************************
+        // Purpose: recursive function to quick sort
+        // Interface: IN: array --> list
+        //                int --> index low
+        //                int --> index high
+        // Returns: None??
+        // *****************************************************/  
+        public void quickSort(int[] list, int low, int high){
+            int part = 0;//variable for partition index
+            if (low>high){
+                part = partition(list, low, high);
+                
+                quickSort(list, low, part-1);
+                quickSort(list, part+1, high);
+            }//end of if 
+        }//end of qSort
         
- 	// ********** mutators **********
+        /*****************************************************
+        // Purpose: Performs partitioning for quick sort
+        // Interface: IN: array --> list
+        //                int --> index low
+        //                int --> index high
+        // Returns: None??
+        // *****************************************************/  
+        public int partition(int[] list, int low, int high){
+            int pivot = list[high]; //sets pivot to end of range
+            int j = low; //sets index for smaller element
+            int x,y = 0; //variables for data swap
+            
+            for(int i = low; i<=high; i++){
+                if(list[i] <= pivot){
+                    x = list[i];
+                    y = list[j];
+                    
+                    list[i] = y;
+                    list[j] = x;
+                    
+                    j++;
+                    
+                }//end of if
+            }//end of for loop
+            
+            x = list[j];
+            y = list[high];
+
+            list[j] = y;
+            list[high] = x;
+            
+            return(j);
+        }//end of partition
  
  }  // end class
