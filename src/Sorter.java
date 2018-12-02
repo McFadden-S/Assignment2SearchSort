@@ -69,7 +69,7 @@
             length--;
             
             while(length>0){
-                for(int i = 0; i < length+1; i++){
+                for(int i = 0; i <= length; i++){
                     if(list[i]>list[ind]){
                         ind = i;
                     }//end of if
@@ -96,9 +96,10 @@
         // Returns: None??
         // *****************************************************/  
         public void quickSort(int[] list, int low, int high){
-            int part = 0;//variable for partition index
-            if (low>high){
-                part = partition(list, low, high);
+            
+            if (low<high){
+                
+                int part = partition(list, low, high);
                 
                 quickSort(list, low, part-1);
                 quickSort(list, part+1, high);
@@ -117,8 +118,10 @@
             int j = low; //sets index for smaller element
             int x,y = 0; //variables for data swap
             
-            for(int i = low; i<=high; i++){
+            for(int i = low; i<=high-1; i++){
                 if(list[i] <= pivot){
+                    
+                    
                     x = list[i];
                     y = list[j];
                     
@@ -126,7 +129,6 @@
                     list[j] = x;
                     
                     j++;
-                    
                 }//end of if
             }//end of for loop
             
