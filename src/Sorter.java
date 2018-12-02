@@ -63,13 +63,14 @@
         // Returns: None??
         // *****************************************************/  
         public void selectionSortSort(int[] list, int length){
-            int ind = 0; //variable for data swap
+            int ind = 1; //indicator of highest value starts at second value
             int x = 0; //variable for data swap
             int y = 0; //variable for data swap
+            length--;
             
             while(length>0){
-                for(int i = 0; i < length; i++){
-                    if(list[i]>list[i+1]){
+                for(int i = 0; i < length+1; i++){
+                    if(list[i]>list[ind]){
                         ind = i;
                     }//end of if
                 }//end of for
@@ -80,6 +81,7 @@
                 list[ind] = y;
                 list[length] = x; 
                 
+                ind = 1;
                 length--;
                 
             }//end of while
