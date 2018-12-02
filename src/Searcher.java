@@ -34,8 +34,8 @@
  	// ********** Methods **********
         
         /*****************************************************
-        // Purpose: sorts the list in ascending order through bubble
-        //          sort method
+        // Purpose: searches for first occurs of key value through
+        //          linear search
         // Interface: IN: array --> list
         //                int --> length
         //                int --> key
@@ -58,5 +58,40 @@
             
             return index; 
         }//end of linearSearch
+        
+        /*****************************************************
+        // Purpose: searches for first occurs of key value through
+        //          binary search
+        // Interface: IN: array --> list
+        //                int --> length
+        //                int --> key
+        // Returns: int
+        // *****************************************************/  
+        public int binarySearch(int[] list, int length, int key){
+            int index = -1;//index of value searched for, value for not founded
+            boolean sc = false; //boolean for if search is complete
+            int low = 0; //first index
+            int high = length-1; //last index
+            int mid = high/2; //index in the middle
+            int pass = 0; //number of passes
+            int wc = 10; //amount of passes for worst case
+            while(!sc && pass <= wc){
+                if(list[mid] < key){
+                    low = mid-1;
+                }//end of less than if
+                else if(list[mid] > key){
+                    high = mid+1;
+                }//end of greater then else if
+                else {
+                sc = true; //search is complete
+                index = mid;
+                }//end of else
+                    
+                mid = (high+low)/2; //finds new mid
+                pass++; //increments for one pass
+            }//end of while loop
+            
+            return index; 
+        }//end of binarySearch
  
  }  // end class
