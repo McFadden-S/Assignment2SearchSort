@@ -98,12 +98,15 @@ public class SandSClient {  // begin class
         */
         
         // create the searcher object
-        //Searcher searcher = new Searcher();
+        Searcher searcher = new Searcher();
         
-        //actualLength = arrayFunctions.loadList(list);
-        //key = rnd.nextInt(10000);
-        //key++;
-        //searchIndex = linearSearch(list, actualLength, key);
+        actualLength = arrayFunctions.loadList(list);
+        arrayFunctions.printList(list, actualLength);
+        key = rnd.nextInt(10000);
+        key++;
+        searchIndex = searcher.linearSearch(list, actualLength, key);
+        System.out.println(key);
+        System.out.println(searchIndex);
         //s.quickSort(list, 0, list.length - 1);
         // searchIndex = linearSearch(list, actualLength, key);
         // searchIndex = binarySearch(list, actualLength, key);
