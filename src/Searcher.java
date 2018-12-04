@@ -73,14 +73,13 @@
             int low = 0; //first index
             int high = length-1; //last index
             int mid = high/2; //index in the middle
-            int pass = 0; //number of passes
-            int wc = 10; //amount of passes for worst case
-            while(!sc && pass <= wc){
+
+            while(!sc && low < high){
                 if(list[mid] < key){
-                    low = mid-1;
+                    low = mid+1;
                 }//end of less than if
                 else if(list[mid] > key){
-                    high = mid+1;
+                    high = mid-1;
                 }//end of greater then else if
                 else {
                 sc = true; //search is complete
@@ -88,7 +87,6 @@
                 }//end of else
                     
                 mid = (high+low)/2; //finds new mid
-                pass++; //increments for one pass
             }//end of while loop
             
             return index; 

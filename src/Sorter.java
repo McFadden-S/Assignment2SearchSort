@@ -70,7 +70,7 @@
         //                int --> length
         // Returns: None
         // *****************************************************/  
-        public void selectionSortSort(int[] list, int length){
+        public void selectionSort(int[] list, int length){
             int ind = 1; //indicator of highest value starts at second value
             int x = 0; //variable for data swap
             int y = 0; //variable for data swap
